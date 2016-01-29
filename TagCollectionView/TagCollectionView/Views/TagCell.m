@@ -28,13 +28,13 @@
 - (void)awakeFromNib {
     
     
-    self.layer.borderColor=[UIColor grayColor].CGColor;
-//
-    self.layer.borderWidth=0.5f;
+//    self.layer.borderColor=[UIColor grayColor].CGColor;
+////
+//    self.layer.borderWidth=0.5f;
 
-//    self.titleLb.layer.cornerRadius=self.titleLb.bounds.size.height*0.5;
-//    
-//    self.titleLb.layer.masksToBounds=YES;
+    self.titleLb.layer.cornerRadius=self.titleLb.bounds.size.height*0.5;
+    
+    self.titleLb.layer.masksToBounds=YES;
 }
 
 -(void)layoutSubviews{

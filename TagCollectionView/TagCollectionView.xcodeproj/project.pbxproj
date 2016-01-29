@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		41C689471C574FDE007E0D89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C689461C574FDE007E0D89 /* main.m */; };
 		41C6894A1C574FDE007E0D89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C689491C574FDE007E0D89 /* AppDelegate.m */; };
-		41C6894D1C574FDE007E0D89 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C6894C1C574FDE007E0D89 /* ViewController.m */; };
+		41C6894D1C574FDE007E0D89 /* TagVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C6894C1C574FDE007E0D89 /* TagVC.m */; };
 		41C689521C574FDE007E0D89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41C689511C574FDE007E0D89 /* Assets.xcassets */; };
 		41C689551C574FDE007E0D89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C689531C574FDE007E0D89 /* LaunchScreen.storyboard */; };
 		41C689601C574FDE007E0D89 /* TagCollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C6895F1C574FDE007E0D89 /* TagCollectionViewTests.m */; };
@@ -20,7 +20,7 @@
 		41C689781C575B12007E0D89 /* TagGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C689771C575B12007E0D89 /* TagGroup.m */; };
 		41C6897B1C575B1A007E0D89 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C6897A1C575B1A007E0D89 /* TagModel.m */; };
 		41C6897F1C575B32007E0D89 /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C6897E1C575B32007E0D89 /* UICollectionViewLeftAlignedLayout.m */; };
-		41C689811C575B6D007E0D89 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C689801C575B6D007E0D89 /* ViewController.xib */; };
+		41C689811C575B6D007E0D89 /* TagVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C689801C575B6D007E0D89 /* TagVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,8 @@
 		41C689461C574FDE007E0D89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		41C689481C574FDE007E0D89 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		41C689491C574FDE007E0D89 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		41C6894B1C574FDE007E0D89 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		41C6894C1C574FDE007E0D89 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		41C6894B1C574FDE007E0D89 /* TagVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagVC.h; sourceTree = "<group>"; };
+		41C6894C1C574FDE007E0D89 /* TagVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagVC.m; sourceTree = "<group>"; };
 		41C689511C574FDE007E0D89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41C689541C574FDE007E0D89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41C689561C574FDE007E0D89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		41C6897A1C575B1A007E0D89 /* TagModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagModel.m; sourceTree = "<group>"; };
 		41C6897D1C575B32007E0D89 /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
 		41C6897E1C575B32007E0D89 /* UICollectionViewLeftAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewLeftAlignedLayout.m; sourceTree = "<group>"; };
-		41C689801C575B6D007E0D89 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		41C689801C575B6D007E0D89 /* TagVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +105,9 @@
 				41C6896A1C575A49007E0D89 /* Views */,
 				41C689481C574FDE007E0D89 /* AppDelegate.h */,
 				41C689491C574FDE007E0D89 /* AppDelegate.m */,
-				41C6894B1C574FDE007E0D89 /* ViewController.h */,
-				41C6894C1C574FDE007E0D89 /* ViewController.m */,
-				41C689801C575B6D007E0D89 /* ViewController.xib */,
+				41C6894B1C574FDE007E0D89 /* TagVC.h */,
+				41C6894C1C574FDE007E0D89 /* TagVC.m */,
+				41C689801C575B6D007E0D89 /* TagVC.xib */,
 				41C6897C1C575B32007E0D89 /* UICollectionViewLeftAlignedLayout */,
 				41C689451C574FDE007E0D89 /* Supporting Files */,
 			);
@@ -248,7 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41C689811C575B6D007E0D89 /* ViewController.xib in Resources */,
+				41C689811C575B6D007E0D89 /* TagVC.xib in Resources */,
 				41C689701C575A64007E0D89 /* HeaderCell.xib in Resources */,
 				41C689751C575AA1007E0D89 /* TagCell.xib in Resources */,
 				41C689551C574FDE007E0D89 /* LaunchScreen.storyboard in Resources */,
@@ -274,7 +274,7 @@
 				41C689741C575AA1007E0D89 /* TagCell.m in Sources */,
 				41C6897B1C575B1A007E0D89 /* TagModel.m in Sources */,
 				41C6896F1C575A64007E0D89 /* HeaderCell.m in Sources */,
-				41C6894D1C574FDE007E0D89 /* ViewController.m in Sources */,
+				41C6894D1C574FDE007E0D89 /* TagVC.m in Sources */,
 				41C6894A1C574FDE007E0D89 /* AppDelegate.m in Sources */,
 				41C689781C575B12007E0D89 /* TagGroup.m in Sources */,
 				41C689471C574FDE007E0D89 /* main.m in Sources */,

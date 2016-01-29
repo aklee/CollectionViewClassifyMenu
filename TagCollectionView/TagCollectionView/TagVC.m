@@ -6,7 +6,7 @@
 //  Copyright © 2016年 AK. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "TagVC.h"
 #import "UICollectionViewLeftAlignedLayout.h"
 #import "TagGroup.h"
 #import "TagModel.h"
@@ -19,7 +19,7 @@ static NSString * const  TagCelIdenty = @"CellIdentifier";
 static NSString * const  HeaderCellIdenty =  @"HeaderViewCellIdentifier";
 
 
-@interface ViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,HeaderCellDelegate>
+@interface TagVC ()<UICollectionViewDataSource,UICollectionViewDelegate,HeaderCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -30,7 +30,7 @@ static NSString * const  HeaderCellIdenty =  @"HeaderViewCellIdentifier";
 
 @end
 
-@implementation ViewController
+@implementation TagVC
 
 - (NSArray *)groups
 {
@@ -142,7 +142,7 @@ static NSString * const  HeaderCellIdenty =  @"HeaderViewCellIdentifier";
 
     TagGroup*group= self.groups[section];
     
-    int count= (group.isOpened ? group.itemArr.count : group.firstRowCount);
+    NSUInteger count= (group.isOpened ? group.itemArr.count : group.firstRowCount);
     
     return  count;
 
