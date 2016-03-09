@@ -6,7 +6,7 @@
 //  Copyright © 2016年 AK. All rights reserved.
 //
 
-#import "TagVC.h"
+#import "TagView.h"
 #import "UICollectionViewLeftAlignedLayout.h"
 #import "TagGroup.h"
 #import "TagModel.h"
@@ -19,88 +19,103 @@ static NSString * const  TagCelIdenty = @"CellIdentifier";
 static NSString * const  HeaderCellIdenty =  @"HeaderViewCellIdentifier";
 
 
-@interface TagVC ()<UICollectionViewDataSource,UICollectionViewDelegate,HeaderCellDelegate>
+@interface TagView ()<UICollectionViewDataSource,UICollectionViewDelegate,HeaderCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
-//总数据group
-@property (nonatomic, strong) NSMutableArray *groups;
 
 
 
 @end
 
-@implementation TagVC
+@implementation TagView
+
++(instancetype)TagView{
+    TagView* view=  [[[UINib  nibWithNibName:@"TagView" bundle:nil]instantiateWithOwner:nil options:nil] firstObject];
+    return  view;
+}
 
 - (NSArray *)groups
 {
-    //默认数据 当有请求时候刷新数据
-    if (_groups == nil) {
-        
-        NSMutableArray *groupArray = [NSMutableArray array];
-   
-        
-        TagModel *m1 =[TagModel modelWithTitle:@"对对对"];
-        
-        
-        TagModel *m2 =[TagModel modelWithTitle:@"吃饭"];
-        
-        TagModel *m3 =[TagModel modelWithTitle:@"睡觉"];
-        
-        TagModel *m4=[TagModel modelWithTitle:@"睡觉asdfsfasfds"];
-        
-        TagModel *m5 =[TagModel modelWithTitle:@"asdfdsfdsf睡觉"];
-        
-        TagModel *m6 =[TagModel modelWithTitle:@"睡sdfdsf觉"];
-        
-        TagModel *m7 =[TagModel modelWithTitle:@"约炮"];
-        
-        TagModel *m8 =[TagModel modelWithTitle:@"哈"];
-        
-        TagModel *m9 =[TagModel modelWithTitle:@"练武功"];
-        
-        TagModel *m10 =[TagModel modelWithTitle:@"打豆豆"];
-        
-        TagGroup *g1=[[TagGroup alloc]init];
-        
-        g1.itemArr=@[m7,m2,m3,m8,m1,m4,m5,m6];
-        
-        g1.groupName=@"dddd打游戏了";
-        [groupArray addObject:g1];
-        
-        
-        TagGroup *g2=[[TagGroup alloc]init];
-        
-        g2.itemArr=@[m2,m3,m1,m4,m5,m6,m7,m10,m9];
-
-        g2.groupName=@"打游戏了";
-        
-        [groupArray addObject:g2];
-       
-        
-        _groups = groupArray;
-        
-        
-    }
+//    //默认数据 当有请求时候刷新数据
+//    if (_groups == nil) {
+//        
+//        NSMutableArray *groupArray = [NSMutableArray array];
+//   
+//        
+//        TagModel *m1 =[TagModel modelWithTitle:@"对对对"];
+//        
+//        TagModel *m2 =[TagModel modelWithTitle:@"吃饭"];
+//        
+//        TagModel *m3 =[TagModel modelWithTitle:@"睡觉"];
+//        
+//        TagModel *m4=[TagModel modelWithTitle:@"睡觉asdfsfasfds"];
+//        
+//        TagModel *m5 =[TagModel modelWithTitle:@"asdfdsfdsf睡觉"];
+//        
+//        TagModel *m6 =[TagModel modelWithTitle:@"睡sdfdsf觉"];
+//        
+//        TagModel *m7 =[TagModel modelWithTitle:@"约炮"];
+//        
+//        TagModel *m8 =[TagModel modelWithTitle:@"哈"];
+//        
+//        TagModel *m9 =[TagModel modelWithTitle:@"练武功"];
+//        
+//        TagModel *m10 =[TagModel modelWithTitle:@"打豆豆"];
+//        
+//        TagGroup *g1=[[TagGroup alloc]init];
+//        
+//        g1.itemArr=@[m7,m2,m3,m8,m1,m4,m5,m6];
+//        
+//        g1.groupName=@"dddd打游戏了";
+//        
+//        [groupArray addObject:g1];
+//        
+//        
+//        TagGroup *g2=[[TagGroup alloc]init];
+//        
+//        g2.groupName=@"打游戏了";
+//        
+//        g2.itemArr=@[m2,m3,m1,m4,m5,m6,m7,m10,m9];
+//        
+//        [groupArray addObject:g2];
+//       
+//        
+//        _groups = groupArray;
+//        
+//        
+//    }
     
     return _groups;
 }
 
- 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-   
-    [self initData];
-    
-    [self setupCollectionView];
 
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
     
+    if (self==[super initWithCoder:aDecoder]) {
+        
+        
+    }
+    return self;
 }
 
-- (void)initData {
-//    self.firstRowCellCountArray = nil;
-//    self.collectionHeaderMoreBtnHideBoolArray = nil;
-//    self.dataSource = [NSArray arrayWithArray:[CYLDBManager dataSource]];
+-(instancetype)initWithFrame:(CGRect)frame{
+    
+    if (self==[super initWithFrame:frame]) {
+        //todo: 通过代码添加控件...
+        [self setup];
+        
+    }
+    return self;
+}
+
+-(void)awakeFromNib{
+    [self setup];
+}
+
+
+-(void)setup{
+    [self setupCollectionView];
 }
 
 -(void)setupCollectionView{
@@ -121,9 +136,20 @@ static NSString * const  HeaderCellIdenty =  @"HeaderViewCellIdentifier";
     self.collectionView.allowsMultipleSelection = YES;
     self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.showsVerticalScrollIndicator = NO;
+    
+    self.collectionView.delegate=self;
+    self.collectionView.dataSource=self;
 //    self.collectionView.scrollsToTop = NO;
 //    self.collectionView.scrollEnabled = NO;
 }
+
+
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    
+}
+
 
 #pragma mark HeaderCell Delegate
 -(void)headerViewDidClickedNameView:(HeaderCell *)HeaderCell index:(NSInteger)idx{
@@ -178,7 +204,7 @@ static NSString * const  HeaderCellIdenty =  @"HeaderViewCellIdentifier";
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-      
+       
         HeaderCell* header =(HeaderCell*) [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:HeaderCellIdenty forIndexPath:indexPath];
         
         header.delegate=self;
@@ -222,6 +248,12 @@ referenceSizeForHeaderInSection:(NSInteger)section {
 
     TagGroup*group= self.groups[section];
 
+//    if (self.isShowHeader==NO) {
+//    
+//        return CGSizeMake(0, 0);
+//    
+//    }
+    
     return CGSizeMake(group.width, group.height);
 }
 

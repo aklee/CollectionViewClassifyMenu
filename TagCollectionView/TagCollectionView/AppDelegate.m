@@ -7,9 +7,9 @@
 //
 
 #import "AppDelegate.h"
+ 
 
-#import "TagVC.h"
-
+#import "DemoViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -21,7 +21,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.window.rootViewController = [TagVC new ];
+    self.window.rootViewController = [DemoViewController new ];
     
     self.window.backgroundColor = [UIColor whiteColor];
     

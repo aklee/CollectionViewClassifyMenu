@@ -29,8 +29,9 @@
     
     _height=35;
     
-   
-    CGSize size= [self.title  sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]} ];
+    float fontSize=17;
+
+    CGSize size= [self.title  sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]} ];
 
     
     _width=size.width+50;

@@ -21,9 +21,9 @@ static float const kCollectionViewToBottomtMargin             = 10;
 
 @property (nonatomic, copy) NSString* groupName;
 
-@property (nonatomic, assign,readonly) float width;
+@property (nonatomic, assign) float width;
 
-@property (nonatomic, assign,readonly) float height;
+@property (nonatomic, assign) float height;
 
 
 

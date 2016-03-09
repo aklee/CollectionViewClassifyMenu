@@ -49,11 +49,11 @@
 
     if (group.isOpened) {
         
-        [self.btn setTitle:@"收起" forState:UIControlStateNormal];
+        [self.btn setTitle:@"Fold" forState:UIControlStateNormal];
     }
     else{
         
-        [self.btn setTitle:@"更多" forState:UIControlStateNormal];
+        [self.btn setTitle:@"More" forState:UIControlStateNormal];
     }
     
     self.nameLb.text=group.groupName;
